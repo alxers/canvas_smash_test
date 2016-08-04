@@ -14,6 +14,16 @@ function drawSquare() {
   CTX.strokeRect(50,50,50,50);
 }
 
+function keydownHandler(e) {
+  monster.state = monster.SCARED
+  render();
+}
+
+function keyupHandler(e) {
+  monster.state = monster.NORMAL;
+  render();
+}
+
 document.addEventListener('keydown', keydownHandler, false);
 document.addEventListener('keyup', keyupHandler, false);
 
