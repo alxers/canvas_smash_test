@@ -14,17 +14,32 @@ function drawSquare() {
   CTX.strokeRect(50,50,50,50);
 }
 
+function drawSlimSquare() {
+
+}
+
 function keydownHandler(e) {
   monster.state = monster.SCARED
   render();
+  console.log('scared');
 }
 
 function keyupHandler(e) {
   monster.state = monster.NORMAL;
   render();
+  console.log('normal');
+}
+
+function render() {
+  switch (monster.state) {
+    case monster.NORMAL:
+      drawSquare();
+      break;
+    case monster.SCARED:
+      drawSlimSquare();
+      break;
+  }
 }
 
 document.addEventListener('keydown', keydownHandler, false);
 document.addEventListener('keyup', keyupHandler, false);
-
-drawSquare();
