@@ -10,12 +10,12 @@ let monster = {
 }
 
 function drawSquare() {
-  CTX.fillRect(25,25,100,100);
-  CTX.strokeRect(50,50,50,50);
+  CTX.fillRect(25, 25, 100, 100);
+  CTX.strokeRect(50, 50, 50, 50);
 }
 
 function drawSlimSquare() {
-
+  CTX.fillRect(15, 15, 100, 100);
 }
 
 function keydownHandler(e) {
@@ -31,6 +31,7 @@ function keyupHandler(e) {
 }
 
 function render() {
+  CTX.clearRect(0, 0, CANVAS.width, CANVAS.height);
   switch (monster.state) {
     case monster.NORMAL:
       drawSquare();
