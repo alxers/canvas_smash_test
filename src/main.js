@@ -30,6 +30,17 @@ function keyupHandler(e) {
   console.log('normal');
 }
 
+function becomeScared() {
+  monster.state = monster.SCARED;
+  setTimeout(becomeNormal, 1000);
+  render();
+}
+
+function becomeNormal() {
+  monster.state = monster.NORMAL;
+  render();
+}
+
 function render() {
   CTX.clearRect(0, 0, CANVAS.width, CANVAS.height);
   switch (monster.state) {
