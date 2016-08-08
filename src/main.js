@@ -19,15 +19,8 @@ function drawSlimSquare() {
 }
 
 function keydownHandler(e) {
-  monster.state = monster.SCARED
-  render();
+  becomeScared();
   console.log('scared');
-}
-
-function keyupHandler(e) {
-  monster.state = monster.NORMAL;
-  render();
-  console.log('normal');
 }
 
 function becomeScared() {
@@ -54,4 +47,3 @@ function render() {
 }
 
 document.addEventListener('keydown', keydownHandler, false);
-document.addEventListener('keyup', keyupHandler, false);
