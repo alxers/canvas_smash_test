@@ -9,13 +9,24 @@ let monster = {
   state: 0
 }
 
-function drawSquare() {
-  CTX.fillRect(25, 25, 100, 100);
-  CTX.strokeRect(50, 50, 50, 50);
+function squareFrame1() {
+  CTX.fillRect(5, 25, 100, 100);
 }
 
-function drawSlimSquare() {
-  CTX.fillRect(15, 15, 100, 100);
+function squareFrame2() {
+  CTX.fillRect(10, 15, 100, 100);
+}
+
+function squareFrame3() {
+  CTX.fillRect(15, 20, 100, 100);
+}
+
+function squareFrame4() {
+  CTX.fillRect(15, 20, 100, 100);
+}
+
+function squareFrame5() {
+  CTX.fillRect(25, 25, 100, 100);
 }
 
 function keydownHandler(e) {
