@@ -57,4 +57,14 @@ function render() {
   }
 }
 
-document.addEventListener('keydown', keydownHandler, false);
+function loadHandler() {
+  updateAnimation();
+}
+
+function updateAnimation() {
+  setTimeout(updateAnimation, 300);
+  monster.updateAnimation();
+  render();
+}
+
+document.addEventListener('load', loadHandler, false);
