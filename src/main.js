@@ -6,32 +6,37 @@ const CTX = CANVAS.getContext('2d');
 let monster = {
   NORMAL: 0,
   SCARED: 1,
-  state: 0
-}
+  state: 0,
 
-function squareFrame1() {
-  CTX.fillRect(5, 25, 100, 100);
-}
+  frame1() {
+    CTX.fillRect(5, 25, 100, 100);
+  },
 
-function squareFrame2() {
-  CTX.fillRect(10, 15, 100, 100);
-}
+  frame2() {
+    CTX.fillRect(10, 15, 100, 100);
+  },
 
-function squareFrame3() {
-  CTX.fillRect(15, 20, 100, 100);
-}
+  frame3() {
+    CTX.fillRect(10, 15, 100, 100);
+  },
 
-function squareFrame4() {
-  CTX.fillRect(15, 20, 100, 100);
-}
+  frame4() {
+    CTX.fillRect(15, 20, 100, 100);
+  },
 
-function squareFrame5() {
-  CTX.fillRect(25, 25, 100, 100);
-}
+  frame5() {
+    CTX.fillRect(25, 25, 100, 100);
+  },
 
-function keydownHandler(e) {
-  becomeScared();
-  console.log('scared');
+  numberOfFrames: [frame1, frame2, frame3, frame4, frame5],
+  currentFrame: 0,
+
+  updateAnimation() {
+    if (this.currentFrame < this.numberOfFrames) {
+      this.currentFrame++;
+      numberOfFrames.map((frame)=> frame());
+    }
+  }
 }
 
 function becomeScared() {
